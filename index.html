@@ -295,6 +295,16 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            .contact-links {
+                flex-direction: column; /* Ubah tata letak menjadi vertikal */
+                align-items: center;    /* Atur supaya konten ada di tengah */
+            }
+
+            .contact-link {
+                width: 100%;            /* Setiap link memenuhi lebar kontainer */
+                text-align: center;      /* Setiap teks dan ikon berada di tengah */
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -364,6 +374,11 @@
                         <h3>Android Studio</h3>
                         <p>Membuat aplikasi Android sederhana menggunakan toolkit Jetpack Compose.</p>
                     </div>
+                    <div class="skill-card animate-up">
+                        <div class="skill-icon"><img src="assets/images/firebase_28dp.png" alt="Android Studio" width="100px"></div>
+                        <h3>Firebase</h3>
+                        <p>Mengintegrasikan Firebase untuk pengelolaan data dan penyimpanan aplikasi Android.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -375,7 +390,7 @@
     <div class="container">
         <div class="section-header animate-up">
             <h2>Featured Projects</h2>
-            <div class="section-line" style="width: 400px;"></div>
+            <div class="section-line" style="width: 350px;"></div>
         </div>
         <div class="projects-grid">
             <div class="project-card animate-up">
@@ -430,7 +445,7 @@
                 <p class="lead">Tertarik bekerja bersama? Kontak saya!</p>
             </div>
             <div class="contact-links animate-up">
-                <a href="mailto:rezamuliaputra927@gmail.com" class="contact-link">
+                <a href="mailto:rezaputramulia@gmail.com" class="contact-link">
                     <i class="email-icon">📧</i>
                     <span>Email</span>
                 </a>
