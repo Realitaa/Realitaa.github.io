@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reza Mulia Putra</title>
+    <style>
+        /* Your existing theme styles */
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        body.dark-mode {
+            background-color: #181818;
+            color: #ffffff;
+        }
+
+        /* New styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero {
+            min-height: 80vh;
+            margin-left: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .button {
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .primary-button {
+            background: #007AFF;
+            color: white;
+        }
+
+        .secondary-button {
+            border: 2px solid currentColor;
+            color: inherit;
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            /* Optional: Tambahkan shadow untuk efek depth */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Your existing animation styles */
+        .animate-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-line {
+            height: 4px;
+            background: #007AFF;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .skill-icon {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .project-tags span {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: rgba(0, 122, 255, 0.1);
+            font-size: 0.875rem;
+        }
+
+        .project-link {
+            color: #007AFF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: inherit;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: background 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                margin-left: 0px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+            .hero-image img {
+                width: 250px;
+                height: 333px;
+            }
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <nav>
+            <h3>RMP</h3>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="animate-up">Reza Mulia Putra</h1>
+                <p class="animate-up">Fresh graduate programmer dari Sekolah Menengah Kejuruan Negeri 9 Medan.
+                    Saya terbuka dan berminat dalam menguasai pengembangan program berbasis website, mobile dan Artificial Intelligence (AI).
+                    Saya mampu berkolaborasi dengan tim dan berkomunikasi dengan baik 
+                    menggunakan Bahasa Indonesia dan Bahasa Inggris untuk kebutuhan dasar programming.</p>
+                <div class="cta-buttons animate-up">
+                    <a href="https://github.com/Realitaa" class="button primary-button">View Portfolio</a>
+                    <a href="assets/CV.pdf" class="button secondary-button">Curriculum Vitae</a>
+                </div>
+            </div>
+            <div class="hero-image animate-up">
+                <img src="assets/images/myself.jpg" alt="Professional portrait">
+            </div>
+        </section>
+    </div>
+
+    <!-- About Section -->
+<section id="skills" class="section">
+    <div class="container">
+        <div class="section-header animate-up">
+            <h2>Skills</h2>
+            <div class="section-line" style="width: 120px;"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text animate-up">
+                <p class="lead">In process of learning. Lebih banyak skill akan ditampilkan!</p>
+                <div class="skills-grid">
+                    <div class="skill-card animate-up">
+                        <div class="skill-icon"><img src="assets/images/html.png" alt="HTML" width="100px"></div>
+                        <h3>HTML</h3>
+                        <p>Membangun struktur untuk desain web HTML.</p>
+                    </div>
+                    <div class="skill-card animate-up">
+                        <div class="skill-icon"><img src="assets/images/bootstrap-logo-shadow.png" alt="Bootstrap 5" width="100px"></div>
+                        <h3>Bootstrap 5</h3>
+                        <p>Bekerja dengan Framework Bootstrap 5 untuk mendesain halaman web yang interaktif dan responsif.</p>
+                    </div>
+                    <div class="skill-card animate-up">
+                        <div class="skill-icon"><img src="assets/images/favicon.ico" alt="Codeigniter4" width="100px"></div>
+                        <h3>Codeigniter 4</h3>
+                        <p>Mampu mengimplementasikan Codeigniter 4 untuk membuat aplikasi web yang lebih kompleks.</p>
+                    </div>
+                    <div class="skill-card animate-up">
+                        <div class="skill-icon"><img src="assets/images/mysql-logo.svg" alt="MySQL" width="100px"></div>
+                        <h3>MySQL</h3>
+                        <p>Mengintegrasikan client dengan server database MySQL untuk pengelolaan data.</p>
+                    </div>
+                    <div class="skill-card animate-up">
+                        <div class="skill-icon"><img src="assets/images/android-studio.png" alt="Android Studio" width="100px"></div>
+                        <h3>Android Studio</h3>
+                        <p>Membuat aplikasi Android sederhana menggunakan toolkit Jetpack Compose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+    <div class="container">
+        <div class="section-header animate-up">
+            <h2>Featured Projects</h2>
+            <div class="section-line" style="width: 400px;"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card animate-up">
+                <div class="project-image">
+                    <img src="assets/images/Screenshot (43).png" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3>onGallery</h3>
+                    <p>onGallery merupakan website galeri foto yang memiliki tampilan ramah dan familiar. 
+                        Ini memiliki fitur seperti membuat, menambah dan menghapus foto dan album.
+                    Foto-foto ditampilkan dalam bentuk postingan sehingga terlihat lebih menarik dan interaktif dengan interaksi seperti suka, komentar dan berbagi.</p>
+                    <div class="project-tags">
+                        <span>Web Design</span>
+                        <span>Codeigniter 4</span>
+                        <span>MySQL</span>
+                    </div>
+                    <a href="https://github.com/Realitaa/ongallery" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <div class="project-card animate-up">
+                <div class="project-image">
+                    <img src="assets/images/BazaarEye.png" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3>BazaarEye</h3>
+                    <p>BazaarEye adalah aplikasi Android yang berfungsi sebagai informasi pada event seperti bazar dan pameran tertentu.
+                        Aplikasi ini dapat menampilkan informasi produk yang ditampilkan, baik dengan cara mencarinya secara manual atau scanning barcode produk.
+                        Di dukung dengan Firebase Realtime Database, data pada aplikasi ini dapat tampil secara realtime selama pengguna terhubung ke jaringan internet.
+                    </p>
+                    <div class="project-tags">
+                        <span>Android</span>
+                        <span>Jetpack Compose</span>
+                        <span>Firebase</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/11yBs082_ps5oO5AHu2zpI7TXyHxL3viy?usp=drive_link" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <!-- More project cards... -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+        <div class="section-header animate-up">
+            <h2>Get in Touch</h2>
+            <div class="section-line" style="width: 260px;"></div>
+        </div>
+        <div class="contact-content">
+            <div class="contact-text animate-up">
+                <p class="lead">Tertarik bekerja bersama? Kontak saya!</p>
+            </div>
+            <div class="contact-links animate-up">
+                <a href="mailto:rezamuliaputra927@gmail.com" class="contact-link">
+                    <i class="email-icon">📧</i>
+                    <span>Email</span>
+                </a>
+                <a href="https://wa.me/+6288807673506" class="contact-link">
+                    <img src="assets/images/whatsapp.png" alt="WhatsApp" width="20px">
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/reza_mputra01" class="contact-link">
+                    <img src="assets/images/instagram.png" alt="Instagram" width="20px">
+                    <span>Instagram</span>
+                </a>
+                <!-- More contact links... -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content animate-up">
+            <p>&copy; 2024 Reza Mulia Putra. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Your existing animation script
+        const elements = document.querySelectorAll(".animate-up");
+
+        function animateOnScroll() {
+            elements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("load", animateOnScroll);
+        window.addEventListener("scroll", animateOnScroll);
+    </script>
+</body>
+</html>
