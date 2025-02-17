@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <title>Reza Mulia Putra</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.3.2 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <!-- Bootstrap Icons v1.11.3-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/theme.css">
+    </head>
+
+    <body class="container bg-secondary-subtle">
+            <script>
+                fetch('/navbar.html?page=trophy')
+                  .then(response => response.text())
+                  .then(data => document.getElementById('header').innerHTML = data);
+              </script>
+        <span id="header"></span>
+
+        <main class="m-3">
+            <h1 class="text-body-emphasis">Kontak Saya</h1>
+            <p>Anda dapat menghubungi saya melalui platform berikut:</p>
+            <ul>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="bi bi-whatsapp text-success"></i> 
+                        <a href="https://wa.me/6288807673506" target="_blank" class="text-decoration-none">Reza Mulia Putra</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-discord text-primary"></i> 
+                        <a class="text-decoration-none">@realitaa</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-instagram text-danger"></i> 
+                        <a href="https://instagram.com/reza_mputra01" target="_blank" class="text-decoration-none">@reza_mputra01</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-telegram text-info"></i> 
+                        <a href="https://t.me/realitaa" target="_blank" class="text-decoration-none">@realitaa</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-linkedin text-primary"></i> 
+                        <a href="https://linkedin.com/in/realitaa" target="_blank" class="text-decoration-none">Reza Mulia Putra</a>
+                    </li>
+                    </ul>
+            </ul>
+        </main>
+            <div class="footer-content text-center py-3">
+                <p>&copy; <span id="current-year"></span> Reza Mulia Putra. All rights reserved.</p>
+            </div>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+          </div>
+
+        <script src="/theme.js"></script>
+        <!-- Bootstrap JavaScript 5.3.2 -->
+        <script 
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+        </script>
+    </body>
+</html>

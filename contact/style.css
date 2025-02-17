@@ -1,0 +1,8 @@
+[data-bs-theme="dark"] a {
+    color: #fff !important;
+  }
+  
+  [data-bs-theme="light"] a {
+    color: #000 !important;
+  }
+  

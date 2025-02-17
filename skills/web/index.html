@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <title>Reza Mulia Putra</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.3.2 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <!-- Bootstrap Icons v1.11.3-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="/theme.css">
+    </head>
+
+        <body class="container bg-secondary-subtle">
+                <script>
+                    fetch('/navbar.html?page=trophy')
+                    .then(response => response.text())
+                    .then(data => document.getElementById('header').innerHTML = data);
+                </script>
+            <span id="header"></span>
+
+            <main class="m-3">
+                <h1 class="text-body-emphasis">Pengembangan Web</h1>
+                <p class="fs-5 col-md-8">Pengembangan web adalah salah satu skill yang dominan pada saya karena dapat dibagun dengan cepat dan dapat dipilih tingkat kesulitannya.
+                    Selain itu, kebanyakan tugas sekolah menggunakan web sebagai penilaian berbasis praktek yang membuat saya lebih terbiasa dengan pengembangan web.
+                    <ul class="fs-5">
+                        <li>Hanya menuliskan kode HTML dan langsung bisa dijalankan di browser.</li>
+                        <li>Tidak membutuhkan komputer spesifikasi tinggi.</li>
+                    </ul>
+                </p>
+
+                <hr class="col-3 col-md-2 mb-3">
+
+                <h1 class="text-body-emphasis mb-3">Bahasa Yang Sering Digunakan</h1>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>PHP</li>
+                </ul>
+
+                <h1 class="text-body-emphasis mb-3">Framework Andalan</h1>
+
+                <div class="row g-5">
+                <div class="col-md-6">
+                    <h2 class="text-body-emphasis">Bootstrap 5</h2>
+                    <div class="row">
+                        <div class="col-9">
+                            <p>Bootstrap 5 adalah framework komponen CSS yang dapat digunakan dengan mudah dan memiliki banyak komponen. Website menjadi
+                                responsif dan menarik. Bootstrap 5 juga memiliki dokumentasi yang lengkap dan mudah dipahami.
+                            </p>
+                            <ul class="list-unstyled ps-0">
+                            <li>
+                                <a class="icon-link mb-1" href="https://getbootstrap.com/" rel="noopener" target="_blank">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                                Tentang Bootstrap 5
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon-link mb-1" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" rel="noopener" target="_blank">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                                Dokumentasi Bootstrap 5
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon-link mb-1" href="/404.html" rel="noopener" target="_blank">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                                Contoh Proyek Bootsrap 5
+                                </a>
+                            </li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap 5 Logo" width="100px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h2 class="text-body-emphasis">Codeigniter 4</h2>
+                    <div class="row">
+                        <div class="col-9">
+                            <p>Codeigniter 4 adalah framework PHP yang ringan dan kuat. Digunakan untuk membuat full-stack website yang ringan. Konfigurasi framework nya 
+                                simpel dan mudah sehingga dapat dikembangkan dengan cepat.
+                            </p>
+                            <ul class="list-unstyled ps-0">
+                            <li>
+                                <a class="icon-link mb-1" href="https://codeigniter.com/" target="_blank">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                                Tentang Codeigniter 4
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon-link mb-1" href="https://codeigniter.com/user_guide/intro/index.html" target="_blank">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                                Dokumentasi Codeigniter 4
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon-link mb-1" href="/404.html">
+                                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                                Contoh Proyek Codeigniter 4
+                                </a>
+                            </li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <img src="https://codeigniter.com/favicon.ico" alt="Codeigniter 4 Logo" width="90px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="container">
+            <div class="footer-content text-center py-3">
+                <p>&copy; <span id="current-year"></span> Reza Mulia Putra. All rights reserved.</p>
+            </div>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+          </div>
+
+        <script src="/theme.js"></script>
+        <!-- Bootstrap JavaScript 5.3.2 -->
+        <script 
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+        </script>
+        <script>
+            const interval = setInterval(() => {
+                const currentMenu = document.getElementById('skills');
+                const activeMenu = document.getElementById('web');
+                if (currentMenu && activeMenu) {
+                    currentMenu.classList.add('active');
+                    activeMenu.classList.add('active');
+                    clearInterval(interval);
+                }
+            }, 100);  // Cek setiap 100 ms sampai elemen ditemukan
+        </script>
+    </body>
+</html>

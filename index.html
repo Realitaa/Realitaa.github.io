@@ -1,492 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reza Mulia Putra</title>
-    <style>
-        /* Your existing theme styles */
-        body.light-mode {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        
-        body.dark-mode {
-            background-color: #181818;
-            color: #ffffff;
-        }
+<!doctype html>
+<html lang="id">
+    <head>
+        <title>Reza Mulia Putra</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
-        /* New styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        <!-- Bootstrap CSS v5.3.2 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        <!-- Bootstrap Icons v1.11.3-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        nav {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/theme.css">
+    </head>
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: inherit;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .hero {
-            min-height: 80vh;
-            margin-left: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            padding: 4rem 0;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .button {
-            padding: 0.875rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .primary-button {
-            background: #007AFF;
-            color: white;
-        }
-
-        .secondary-button {
-            border: 2px solid currentColor;
-            color: inherit;
-        }
-
-        .hero-image {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            width: 300px;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-            /* Optional: Tambahkan shadow untuk efek depth */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Your existing animation styles */
-        .animate-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section {
-            padding: 6rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-line {
-            height: 4px;
-            background: #007AFF;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .lead {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            text-align: center;
-        }
-
-        .skill-icon {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 1rem;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            border-radius: 12px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-
-        .project-tags span {
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            background: rgba(0, 122, 255, 0.1);
-            font-size: 0.875rem;
-        }
-
-        .project-link {
-            color: #007AFF;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: inherit;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            transition: background 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                margin-left: 0px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .cta-buttons {
-                justify-content: center;
-            }
-            .hero-image img {
-                width: 250px;
-                height: 333px;
-            }
-            .section {
-                padding: 4rem 0;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-links {
-                flex-direction: column; /* Ubah tata letak menjadi vertikal */
-                align-items: center;    /* Atur supaya konten ada di tengah */
-            }
-
-            .contact-link {
-                width: 100%;            /* Setiap link memenuhi lebar kontainer */
-                text-align: center;      /* Setiap teks dan ikon berada di tengah */
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body class="dark-mode">
-    <div class="container">
-        <nav>
-            <h3>RMP</h3>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="animate-up">Reza Mulia Putra</h1>
-                <p class="animate-up">Fresh graduate programmer dari Sekolah Menengah Kejuruan Negeri 9 Medan.
-                    Saya terbuka dan berminat dalam menguasai pengembangan program berbasis website, mobile dan Artificial Intelligence (AI).
-                    Saya mampu berkolaborasi dengan tim dan berkomunikasi dengan baik 
-                    menggunakan Bahasa Indonesia dan Bahasa Inggris untuk kebutuhan dasar programming.</p>
-                <div class="cta-buttons animate-up">
-                    <a href="https://github.com/Realitaa" class="button primary-button">View Portfolio</a>
-                    <a href="assets/CV.pdf" class="button secondary-button">Curriculum Vitae</a>
+    <body class="container bg-secondary-subtle">
+            <script>
+                fetch('navbar.html')
+                  .then(response => response.text())
+                  .then(data => document.getElementById('header').innerHTML = data);
+              </script>
+        <span id="header"></span>
+        <main>
+            <div class="px-4 py-2 my-5 text-center">
+                <img class="d-block mx-auto mb-4" src="/assets/img/myself.jpg" alt="Reza Mulia Putra" width="300">
+                <h1 class="display-5 fw-bold text-body-emphasis">Reza Mulia Putra</h1>
+                <div class="col-lg-6 mx-auto">
+                  <p class="lead mb-4">Halo, saya Reza Mulia Putra, calon Software Engineer dengan minat besar di Artificial Intelligence dan pengembangan web. 
+                    Saya memiliki pengalaman dalam membangun aplikasi desktop dan Android, serta berkompetisi di ajang seleksi daerah WorldSkills ASEAN. 
+                    Bersemangat untuk terus belajar dan menciptakan solusi digital yang bermanfaat. <br> Ini adalah petualangan saya!</b></p>
                 </div>
-            </div>
-            <div class="hero-image animate-up">
-                <img src="assets/images/myself.jpg" alt="Professional portrait">
-            </div>
-        </section>
-    </div>
+              </div>
 
-    <!-- About Section -->
-<section id="skills" class="section">
-    <div class="container">
-        <div class="section-header animate-up">
-            <h2>Skills</h2>
-            <div class="section-line" style="width: 120px;"></div>
-        </div>
-        <div class="about-content">
-            <div class="about-text animate-up">
-                <p class="lead">In process of learning. Lebih banyak skill akan ditampilkan!</p>
-                <div class="skills-grid">
-                    <div class="skill-card animate-up">
-                        <div class="skill-icon"><img src="assets/images/html.png" alt="HTML" width="100px"></div>
-                        <h3>HTML</h3>
-                        <p>Membangun struktur untuk desain web HTML.</p>
+              <div class="container col-xxl-8 px-4 pb-3">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                  <div class="col-10 col-sm-8 col-lg-6">
+                    <div class="img-container">
+                        <img src="https://i0.wp.com/www.kabarberanda.com/wp-content/uploads/2023/04/smk-negeri-9-medan-smk-negeri-9-medan.jpg?w=1000&ssl=1" class="d-block mx-lg-auto img-fluid" alt="SMK Negeri 9 Medan" loading="lazy">
+                        <div class="overlay">
+                            <p>SMK Negeri 9 Medan</p>
+                            <span class="text-sm fs-6 fst-italic">source: kabarberanda.com</span>
+                        </div>
                     </div>
-                    <div class="skill-card animate-up">
-                        <div class="skill-icon"><img src="assets/images/bootstrap-logo-shadow.png" alt="Bootstrap 5" width="100px"></div>
-                        <h3>Bootstrap 5</h3>
-                        <p>Bekerja dengan Framework Bootstrap 5 untuk mendesain halaman web yang interaktif dan responsif.</p>
+                    <div class="img-container">
+                        <img src="https://smkn9medan.sch.id/wp-content/uploads/2024/11/IMG_20190417_162933-scaled.jpg" class="d-block mx-lg-auto img-fluid mt-2" alt="SMK Negeri 9 Medan" loading="lazy">
+                        <div class="overlay">
+                            <p>Lab Komputer</p>
+                            <span class="text-sm fs-6 fst-italic">source: smkn9medan.sch.id</span>
+                        </div>
                     </div>
-                    <div class="skill-card animate-up">
-                        <div class="skill-icon"><img src="assets/images/favicon.ico" alt="Codeigniter4" width="100px"></div>
-                        <h3>Codeigniter 4</h3>
-                        <p>Mampu mengimplementasikan Codeigniter 4 untuk membuat aplikasi web yang lebih kompleks.</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Bersekolah di SMK Negeri 9 Medan</h2>
+                    <p class="lead">Saya sedang bersekolah di SMK Negeri 9 Medan pada program keahlian Pengembangan Perangkat Lunak dan Gim 
+                        (disebut juga Rekayasa Perangkat Lunak). Selama 3 tahun bersekolah, kami sudah belajar mulai dari pemrograman dasar hingga
+                        dapat membuat website dan aplikasi native di desktop dan Android.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                      <a href="/404.html" type="button" class="btn btn-primary px-3 me-md-2">Contoh proyek...</a>
+                      <a href="https://smkn9medan.sch.id/" type="button" class="btn btn-secondary px-3 me-md-2">Tentang Sekolah</a>
                     </div>
-                    <div class="skill-card animate-up">
-                        <div class="skill-icon"><img src="assets/images/mysql-logo.svg" alt="MySQL" width="100px"></div>
-                        <h3>MySQL</h3>
-                        <p>Mengintegrasikan client dengan server database MySQL untuk pengelolaan data.</p>
-                    </div>
-                    <div class="skill-card animate-up">
-                        <div class="skill-icon"><img src="assets/images/android-studio.png" alt="Android Studio" width="100px"></div>
-                        <h3>Android Studio</h3>
-                        <p>Membuat aplikasi Android sederhana menggunakan toolkit Jetpack Compose.</p>
-                    </div>
-                    <div class="skill-card animate-up">
-                        <div class="skill-icon"><img src="assets/images/firebase_28dp.png" alt="Android Studio" width="100px"></div>
-                        <h3>Firebase</h3>
-                        <p>Mengintegrasikan Firebase untuk pengelolaan data dan penyimpanan aplikasi Android.</p>
-                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+              </div>
 
-<!-- Projects Section -->
-<section id="projects" class="section">
-    <div class="container">
-        <div class="section-header animate-up">
-            <h2>Featured Projects</h2>
-            <div class="section-line" style="width: 350px;"></div>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card animate-up">
-                <div class="project-image">
-                    <img src="assets/images/Screenshot (43).png" alt="Project 1">
-                </div>
-                <div class="project-content">
-                    <h3>onGallery</h3>
-                    <p>onGallery merupakan website galeri foto yang memiliki tampilan ramah dan familiar. 
-                        Ini memiliki fitur seperti membuat, menambah dan menghapus foto dan album.
-                    Foto-foto ditampilkan dalam bentuk postingan sehingga terlihat lebih menarik dan interaktif dengan interaksi seperti suka, komentar dan berbagi.</p>
-                    <div class="project-tags">
-                        <span>Web Design</span>
-                        <span>Codeigniter 4</span>
-                        <span>MySQL</span>
+              <div class="container col-xxl-8 px-4 pb-3">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                  <div class="col-10 col-sm-8 col-lg-6">
+                    <div class="img-container">
+                        <img src="https://www.pmimedan.or.id/wp-content/uploads/2021/04/Capture6.png" class="d-block mx-lg-auto img-fluid" alt="SMK Negeri 9 Medan" loading="lazy">
+                        <div class="overlay">
+                            <p>UDD PMI Kota Medan</p>
+                            <span class="text-sm fs-6 fst-italic">source: pmimedan.or.id</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/Realitaa/ongallery" class="project-link">View Project →</a>
-                </div>
-            </div>
-            <div class="project-card animate-up">
-                <div class="project-image">
-                    <img src="assets/images/BazaarEye.png" alt="Project 1">
-                </div>
-                <div class="project-content">
-                    <h3>BazaarEye</h3>
-                    <p>BazaarEye adalah aplikasi Android yang berfungsi sebagai informasi pada event seperti bazar dan pameran tertentu.
-                        Aplikasi ini dapat menampilkan informasi produk yang ditampilkan, baik dengan cara mencarinya secara manual atau scanning barcode produk.
-                        Di dukung dengan Firebase Realtime Database, data pada aplikasi ini dapat tampil secara realtime selama pengguna terhubung ke jaringan internet.
+                  </div>
+                  <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Sedang PKL di UDD PMI KOTA MEDAN</h2>
+                    <p class="lead">Saya juga sedang menjalani PKL di UDD PMI KOTA MEDAN sebagai IT Support dan Programmer selama 5 bulan (sudah berjalan 4 bulan). 
+                        Selama PKL saya belajar banyak tentang perbaikan komputer, pengelolaan data, pengembangan aplikasi berbasis web, dan juga pengelolaan server.
                     </p>
-                    <div class="project-tags">
-                        <span>Android</span>
-                        <span>Jetpack Compose</span>
-                        <span>Firebase</span>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                      <a href="/404.html" type="button" class="btn btn-primary px-3 me-md-2">Contoh proyek...</a>
+                      <a href="https://www.pmimedan.or.id/" type="button" class="btn btn-secondary px-3 me-md-2">Tentang Perusahaan</a>
                     </div>
-                    <a href="https://drive.google.com/drive/folders/11yBs082_ps5oO5AHu2zpI7TXyHxL3viy?usp=drive_link" class="project-link">View Project →</a>
+                  </div>
                 </div>
-            </div>
-            <!-- More project cards... -->
-        </div>
-    </div>
-</section>
+              </div>
 
-<!-- Contact Section -->
-<section id="contact" class="section">
-    <div class="container">
-        <div class="section-header animate-up">
-            <h2>Get in Touch</h2>
-            <div class="section-line" style="width: 260px;"></div>
-        </div>
-        <div class="contact-content">
-            <div class="contact-text animate-up">
-                <p class="lead">Tertarik bekerja bersama? Kontak saya!</p>
-            </div>
-            <div class="contact-links animate-up">
-                <a href="mailto:rezaputramulia@gmail.com" class="contact-link">
-                    <i class="email-icon">📧</i>
-                    <span>Email</span>
-                </a>
-                <a href="https://wa.me/+6288807673506" class="contact-link">
-                    <img src="assets/images/whatsapp.png" alt="WhatsApp" width="20px">
-                    <span>WhatsApp</span>
-                </a>
-                <a href="https://www.instagram.com/reza_mputra01" class="contact-link">
-                    <img src="assets/images/instagram.png" alt="Instagram" width="20px">
-                    <span>Instagram</span>
-                </a>
-                <!-- More contact links... -->
-            </div>
-        </div>
-    </div>
-</section>
+              <div class="container text-center">
+                <p>Saya juga merupakan alumni dari SMP Negeri 9 Medan dan SD Negeri 064979 Medan. Terima kasih kepada Bapak/Ibu guru yang sudah membimbing dan mengajarkan saya.</p>
+              </div>
+        </main>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content animate-up">
-            <p>&copy; 2024 Reza Mulia Putra. All rights reserved.</p>
+        <div class="container">
+          <div class="footer-content text-center py-3">
+              <p>&copy; <span id="current-year"></span> Reza Mulia Putra. All rights reserved.</p>
+          </div>
+          <script>
+              document.getElementById('current-year').textContent = new Date().getFullYear();
+          </script>
         </div>
-    </div>
-</footer>
-
-    <script>
-        // Your existing animation script
-        const elements = document.querySelectorAll(".animate-up");
-
-        function animateOnScroll() {
-            elements.forEach((el) => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    el.classList.add("visible");
+        
+        <script src="/theme.js"></script>
+        <!-- Bootstrap JavaScript 5.3.2 -->
+        <script 
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+        </script>
+        <script>
+            const interval = setInterval(() => {
+                const currentMenu = document.getElementById('home');
+                if (currentMenu) {
+                    currentMenu.classList.add('active');
+                    clearInterval(interval);
                 }
-            });
-        }
-
-        window.addEventListener("load", animateOnScroll);
-        window.addEventListener("scroll", animateOnScroll);
-    </script>
-</body>
+            }, 100);  // Cek setiap 100 ms sampai elemen ditemukan
+        </script>
+    </body>
 </html>

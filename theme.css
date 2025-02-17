@@ -1,0 +1,8 @@
+#themeIcon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+  }
+  #themeIcon:hover {
+    transform: rotate(20deg);
+  }

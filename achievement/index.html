@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <title>Reza Mulia Putra</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.3.2 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <!-- Bootstrap Icons v1.11.3-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/theme.css">
+    </head>
+
+    <body class="container bg-secondary-subtle">
+            <script>
+                fetch('/navbar.html?page=trophy')
+                  .then(response => response.text())
+                  .then(data => document.getElementById('header').innerHTML = data);
+              </script>
+        <span id="header"></span>
+
+        <main>
+            <div class="container my-5">
+                <div class="p-5 text-center bg-body-tertiary rounded-3">
+                    <div class="responsive-iframe-wrapper">
+                        <div class="responsive-iframe">
+                          <iframe 
+                            src="https://drive.google.com/file/d/1lrrhPHrqfQhJg5yLpKqrdOKRoDGexOae/preview"
+                            frameborder="0" 
+                            allowfullscreen>
+                          </iframe>
+                        </div>
+                      </div>
+                  <h1 class="text-body-emphasis my-2">Sertifikat Partisipasi Seleksi WorldSkills ASEAN</h1>
+                  <p class="col-lg-8 mx-auto fs-5 text-muted">
+                    Sertifikat yang diberikan kepada Reza Mulia Putra atas partisipasinya sebagai Peserta Seleksi Daerah WorldSkills ASEAN 2024.
+                    Bidang yang diikuti adalah IT Software Solution for Business, yaitu bidang perlombaan yang menuntut peserta untuk membuat aplikasi
+                    native desktop dan mobile yang dapat membantu dalam mengelola data dan informasi.
+                  </p>
+                  <div class="d-inline-flex gap-2">
+                    <a href="https://worldskills.org/" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+                      Tentang WorldSkills ASEAN
+                      <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                    <!-- <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+                      Secondary link
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+        </main>
+        <div class="container">
+            <div class="footer-content text-center py-3">
+                <p>&copy; <span id="current-year"></span> Reza Mulia Putra. All rights reserved.</p>
+            </div>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+          </div>
+
+        <script src="/theme.js"></script>
+        <!-- Bootstrap JavaScript 5.3.2 -->
+        <script 
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+        </script>
+        <script>
+            const interval = setInterval(() => {
+                const currentMenu = document.getElementById('trophy');
+                if (currentMenu) {
+                    currentMenu.classList.add('active');
+                    clearInterval(interval);
+                }
+            }, 100);  // Cek setiap 100 ms sampai elemen ditemukan
+        </script>
+    </body>
+</html>
